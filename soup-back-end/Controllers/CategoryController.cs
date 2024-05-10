@@ -20,7 +20,6 @@ namespace soup_back_end.Controllers
         }
 
         [HttpGet("GetAll")]
-        [Authorize]
         public IActionResult GetAll()
         {
             try

@@ -21,7 +21,6 @@ namespace soup_back_end.Controllers
         }
 
         [HttpGet("GetAll")]
-        [Authorize]
         public IActionResult GetAll()
         {
             try
@@ -36,10 +35,9 @@ namespace soup_back_end.Controllers
         }
 
         [HttpGet("GetByUserId")]
-        [Authorize]
         public IActionResult GetByUserId(Guid userid)
         {
-            Cart? cart = _cartData.GetByUserId(userid);
+            List<Cart> cart = _cartData.GetByUserId(userid);
 
             if (cart == null)
             {
@@ -50,10 +48,9 @@ namespace soup_back_end.Controllers
         }
 
         [HttpGet("GetItemAmount")]
-        [Authorize]
         public IActionResult GetItemAmount(Guid userid)
         {
-            Cart? cart = _cartData.GetByUserId(userid);
+            List<Cart> cart = _cartData.GetByUserId(userid);
 
             if (cart == null)
             {
@@ -64,10 +61,9 @@ namespace soup_back_end.Controllers
         }
 
         [HttpGet("GetTotalPrice")]
-        [Authorize]
         public IActionResult GetTotalPrice(Guid userid)
         {
-            Cart? cart = _cartData.GetByUserId(userid);
+            List<Cart> cart = _cartData.GetByUserId(userid);
 
             if (cart == null)
             {
